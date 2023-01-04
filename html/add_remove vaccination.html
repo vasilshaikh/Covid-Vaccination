@@ -1,0 +1,197 @@
+<!doctype html>
+                        <html>
+                            <head>
+                                <meta charset='utf-8'>
+                                <meta name='viewport' content='width=device-width, initial-scale=1'>
+                                <title>Add/Remove Vaccination Centres</title>
+                                <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' rel='stylesheet'>
+                                <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+                                <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+                                <style>::-webkit-scrollbar {
+                                  width: 8px;
+                                }
+                                /* Track */
+                                ::-webkit-scrollbar-track {
+                                  background: #f1f1f1; 
+                                }
+                                 
+                                /* Handle */
+                                ::-webkit-scrollbar-thumb {
+                                  background: #888; 
+                                }
+                                
+                                /* Handle on hover */
+                                ::-webkit-scrollbar-thumb:hover {
+                                  background: #555; 
+                                } @import url('https://fonts.googleapis.com/css?family=Assistant');
+
+body {
+    background: #eee;
+    font-family: Assistant, sans-serif
+}
+
+.cell-1 {
+  border-collapse: separate;
+  border-spacing: 0 4em;
+  background: #ffffff;
+  border-bottom: 5px solid transparent;
+  /*background-color: gold;*/
+  background-clip: padding-box;
+  cursor: pointer;
+}
+
+thead {
+  background: #dddcdc;
+}
+
+
+.table-elipse {
+  cursor: pointer;
+}
+
+#demo {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s 0.1s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.row-child {
+  background-color: #000;
+  color: #fff;
+}</style>
+                                </head>
+                                <body className='snippet-body'>
+                                <div class="container mt-5">
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-10">
+              <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Vaccination Centre</button><button type="button" style="margin-left: 60%;" class="btn btn-primary">Get Dosage Details</button></p>
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Add Vaccination Centre</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Centre ID" aria-label="Centre ID" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Centre Name" aria-label="Centre Name" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Phone Number" aria-label="Phone Number" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Address" aria-label="Address" aria-describedby="basic-addon1">
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                <div class="rounded">
+                    <div class="table-responsive table-borderless">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">S. No.</th>
+                                    <th>Centre ID</th>
+                                    <th>Centre name</th>
+                                    <th>status</th>
+                                    <th>Phone Number</th>
+                                    <th>Address</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-body">
+                                <tr class="cell-1" data-toggle="collapse" data-target="#demo">
+                                    <td class="text-center">1</td>
+                                    <td>123</td>
+                                    <td>Mumbai East</td>
+                                    <td><span class="badge badge-danger">Inactive</span></td>
+                                    <td>1234567890</td>
+                                    <td>Test Colony, 12333, Mumbai.</td>
+                                    <td class="table-elipse" data-toggle="collapse" data-target="#demo"><i class="fa fa-ellipsis-h text-black-50"></i></td>
+                                </tr>
+                                <tr id="demo" class="collapse cell-1 row-child">
+                                    <td class="text-center" colspan="1"><i class="fa fa-angle-up"></i></td>
+                                    <td colspan="1">Vaccines Available:&nbsp;</td>
+                                    <td colspan="3"> Pfizer, Covaxin</td>
+                                    <td colspan="1">Slots left: -</td>
+                                    <td colspan="2"> <button class="btn btn-danger full-width" type="submit">Remove</button></td>
+                                </tr>
+                                <tr class="cell-1" data-toggle="collapse" data-target="#demo-2">
+                                    <td class="text-center">2</td>
+                                    <td>456</td>
+                                    <td>Mumbai West</td>
+                                    <td><span class="badge badge-success">Active</span></td>
+                                    <td>0987654321</td>
+                                    <td>ABC Colony, 11111, Mumbai.</td>
+                                    <td class="table-elipse" data-toggle="collapse" data-target="#demo-2"><i class="fa fa-ellipsis-h text-black-50"></i></td>
+                                </tr>
+                                <tr id="demo-2" class="collapse cell-1 row-child">
+                                    <td class="text-center" colspan="1"><i class="fa fa-angle-up"></i></td>
+                                    <td colspan="1">Vaccines Available:&nbsp;</td>
+                                    <td colspan="3"> Pfizer, Covaxin</td>
+                                    <td colspan="1">Slots left: 2</td>
+                                    <td colspan="2"> <button class="btn btn-danger full-width" type="submit">Remove</button></td>
+                                </tr>
+                                <tr class="cell-1" data-toggle="collapse" data-target="#demo-3">
+                                    <td class="text-center">3</td>
+                                    <td>789</td>
+                                    <td>Solapur</td>
+                                    <td><span class="badge badge-success">Active</span></td>
+                                    <td>1111122222</td>
+                                    <td>Xyz Apartments, 22222, Solapur</td>
+                                    <td class="table-elipse" data-toggle="collapse" data-target="#demo-3"><i class="fa fa-ellipsis-h text-black-50"></i></td>
+                                </tr>
+                                <tr id="demo-3" class="collapse cell-1 row-child">
+                                    <td class="text-center" colspan="1"><i class="fa fa-angle-up"></i></td>
+                                    <td colspan="1">Vaccines Available:&nbsp;</td>
+                                    <td colspan="3"> Cowin, Covaxin</td>
+                                    <td colspan="1">Slots left: 5</td>
+                                    <td colspan="2"> <button class="btn btn-danger full-width" type="submit">Remove</button></td>
+                                </tr>
+                                <tr class="cell-1" data-toggle="collapse" data-target="#demo-4">
+                                    <td class="text-center">4</td>
+                                    <td>012</td>
+                                    <td>Pune</td>
+                                    <td><span class="badge badge-success">Active</span></td>
+                                    <td>8888899999</td>
+                                    <td>PQR Area, 239494, Pune</td>
+                                    <td class="table-elipse" data-toggle="collapse" data-target="#demo-4"><i class="fa fa-ellipsis-h text-black-50"></i></td>
+                                </tr>
+                                <tr id="demo-4" class="collapse cell-1 row-child">
+                                    <td class="text-center" colspan="1"><i class="fa fa-angle-up"></i></td>
+                                    <td colspan="1">Vaccines Available:&nbsp;</td>
+                                    <td colspan="3"> Cowin, Covaxin</td>
+                                    <td colspan="1">Slots left: 4</td>
+                                    <td colspan="2"> <button class="btn btn-danger full-width" type="submit">Remove</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <button type="button" style="margin-left: 45%;" class="btn btn-danger">Log Out</button>
+            </div>
+        </div>
+    </div>
+                                <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js'></script>
+                                <script type='text/javascript' src='#'></script>
+                                <script type='text/javascript' src='#'></script>
+                                <script type='text/javascript' src='#'></script>
+                                <script type='text/javascript'>#</script>
+                                <script type='text/javascript'>var myLink = document.querySelector('a[href="#"]');
+                                myLink.addEventListener('click', function(e) {
+                                  e.preventDefault();
+                                });</script>
+                            
+                                </body>
+                            </html>
